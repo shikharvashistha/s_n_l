@@ -28,16 +28,16 @@ int main()
     draw_line(50, '=');
 
     cout << "\n\n\nEnter Name of player 1 :";
-    gets(p1name);
+    _gets(p1name);
     cout << "\nEnter Name of player 2 :";
-    gets(p2name);
+    _gets(p2name);
 
     while (player1 < 100 && player2 < 100)
 	{
         board();
         gamescore(p1name, p2name, player1, player2);
         cout << "\n\n >>> " << p1name << " Now your Turn >> Press any key to play ";
-        getch();
+        _getch();
         lastpos = player1;
         play_dice(player1);
         if (player1 < lastpos)
@@ -45,14 +45,14 @@ int main()
         else if (player1 > lastpos + 6)
             cout << "\nGreat!! you got a ladder !! You are at position " << player1;
             cout << "\n\n >>> " << p2name << " Now your Turn >> Press any key to play ";
-        getch();
+        _getch();
         lastpos = player2;
         play_dice(player2);
         if (player2 < lastpos)
             cout << "\n\n\aOops!! Snake found !! You are at position " << player2 << "\n";
         else if (player2 > lastpos + 6)
             cout << "\n\nGreat!! you got a ladder !! You are at position " << player2 << "\n";
-        getch();
+        _getch();
     }
     system("cls");
     cout << "\n\n\n";
@@ -67,7 +67,7 @@ int main()
     else
         cout << "Congratulations !!! "<<p2name << ", You won the game\n\n";
     draw_line(52, '#');
-    getch();
+    _getch();
     return 0;
 }
 void draw_line(int n, char ch)
